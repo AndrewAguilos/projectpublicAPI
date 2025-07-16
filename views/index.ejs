@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Random Dog</title>
+</head>
+<body>
+    <h1>🦮 Daily Doggo 🐕</h1>
+
+    <form action="/breed" method="POST">
+        <label for="breed">Select a breed:</label>
+        <select name="breed" id="breed">
+           <% breeds.forEach(breed => { %>
+                <option value="<%= breed %>"><%= breed.charAt(0).toUpperCase() + breed.slice(1) %></option>
+           <% }) %>
+        </select>
+        <button type="submit">Show Dog</button>
+    </form>
+
+    <div>
+        <h2>Here is your dog!</h2>
+        <img src="<%= imageUrl %>" alt="Dog Image" style="max-width: 400px;">
+    </div>
+
+    <br>
+    <a href="/">Get a Random Dog</a>
+    
+    
+</body>
+</html> 
